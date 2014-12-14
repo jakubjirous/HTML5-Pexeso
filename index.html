@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang=en>
+	<head>
+		<meta charset="utf-8">
+		<meta name="description" content="HTML5 Games">
+		<meta name="keywords" content="HTML5, CSS3, JavaScript, Pexeso">
+		<meta name="author" content="Jakub Jirouš">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" style="text/css" href="css/font-awesome.min.css" />
+		<link rel="stylesheet" style="text/css" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" style="text/css" href="css/pexeso.css" />
+		<title>HTML5 Pexeso</title>
+	</head>
+	<body>
+		<header>
+			<h1>HTML5 Pexeso</h1>
+		</header>
+
+		<button id="new-game" type="button" class="btn btn-primary" data-toggle="modal" data-target="#pexeso-init">
+			Nová hra
+		</button>
+
+		<div id="info">
+			<p>
+				Počet otočení karet: <span id="clicks" class="badge">0</span>
+			</p>
+
+			<p>
+				Počet nalezených dvojic karet: <span id="pairs" class="badge">0</span>
+			</p>
+		</div>
+
+		<div id="game">
+			<div class="card">
+				<div class="face front"></div>
+				<div class="face back">
+					<i></i>
+				</div>
+			</div>
+		</div>
+
+
+		<!-- Modals -->
+		<div class="modal fade" id="pexeso-init" tabindex="-1" role="dialog" aria-labelledby="pexeso-init-label" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<form role="form" id="pexeso-init">
+						<div class="modal-header">
+							<h4 class="modal-title" id="my-modal-label">HTML5 Pexeso</h4>
+						</div>
+						
+						
+						<div class="modal-body">
+							<p>Vítejte v HTML5 hře Pexeso.</p>
+							<p>Před samotným začátkem hry si zvolte počáteční podmínky hry</p>
+							
+							<div class="form-group">
+								<label for="cards-count">Velikost hracího pole:</label>
+								<select id="cards-count" class="form-control">
+									<optgroup label="+2:">
+										<option value="4" selected="selected">4 karty</option>
+										<option value="6">6 karet</option>
+										<option value="8">8 karet</option>
+										<option value="10">10 karet</option>
+										<option value="12">12 karet</option>
+										<option value="14">14 karet</option>
+										<option value="16">16 karet</option>
+										<option value="18">18 karet</option>
+										<option value="20">20 karet</option>
+										<option value="22">22 karet</option>
+										<option value="24">24 karet</option>
+										<option value="26">26 karet</option>
+										<option value="28">28 karet</option>
+										<option value="30">30 karet</option>
+									</optgroup>
+
+									<optgroup label="+10:">
+										<option value="40">40 karet</option>
+										<option value="50">50 karet</option>
+										<option value="60">60 karet</option>
+										<option value="70">70 karet</option>
+										<option value="80">80 karet</option>
+										<option value="90">90 karet</option>
+										<option value="100">100 karet</option>
+									</optgroup>
+								</select>
+							</div>
+							
+						</div>
+						<div class="modal-footer">
+							<button type="button" id="game-start" class="btn btn-primary" data-dismiss="modal">Začít hrát</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="modal fade" id="pexeso-end" tabindex="-1" role="dialog" aria-labelledby="pexeso-init-label" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<form role="form" id="pexeso-init">
+						<div class="modal-header">
+							<h4 class="modal-title" id="my-modal-label">HTML5 Pexeso</h4>
+						</div>
+						
+						
+						<div class="modal-body">
+							<p class="alert alert-success">
+								<strong>Gratulujeme k úspěšnému dokončení pexesa.<strong>
+							</p>
+
+							<p>
+								Počet otočených karet: <span id="clicksEnd" class="badge">0</span>
+							</p>
+
+							<p>
+								Počet nalezených dvojic: <span id="pairsEnd" class="badge">0</span>				
+							</p>
+					
+							<p>
+								Vaše úspěšnost: <span id="successEnd" class="badge">0%</span>				
+							</p>
+						</div>
+
+			
+						<div class="modal-footer">
+							<button id="renew-game" type="button" class="btn btn-primary" data-toggle="modal">
+								Nová hra
+							</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/pexeso.js"></script>
+	</body>
+</html>
