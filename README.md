@@ -1,2 +1,2 @@
-HTML5-Pexeso
+HTML5 Pexeso
 ============
