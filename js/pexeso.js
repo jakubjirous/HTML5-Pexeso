@@ -116,6 +116,7 @@ matchingGame.deck = [
     'fa fa-music', 'fa fa-music'
 ];
 
+
 (function($) {
 
     // zobrazeni modal okna pro inicializaci pexesa pred samotnym spustenim
@@ -126,59 +127,24 @@ matchingGame.deck = [
         keyboard: false
     });
 
-    // tlacitko pro znovu spusteni hry
-    var renewGame = document.getElementById('renew-game');
-
-    // zachyceni kliknuti na tlacitko pro znovu spusteni hry
-    if (document.addEventListener) { // W3C
-        renewGame.addEventListener('click', reload, false);
-    } else if (document.attachEvent) { // IE
-        renewGame.attachEvent('onclick', reload);
-    } else { // last resort
-        renewGame.onclick = reload;
-    }
-
-
 
     // tlacitko pro inicializaci nove hry
     // zobrazeni modal okna
-    var newGame = document.getElementById('new-game');
+    $('#new-game').click(function(){
+        location.reload(); 
+    });
 
-    // zachyceni kliknuti na tlacitko pro spusteni hry
-    if (document.addEventListener) {    // W3C
-        newGame.addEventListener('click', reload, false);
-
-    } else if (document.attachEvent) {  // IE
-        newGame.attachEvent('onclick', reload);
-
-    } else { 
-        newGame.onclick = reload;
-    }
+    // tlacitko pro znovu spusteni hry
+    $('#renew-game').click(function(){
+        location.reload(); 
+    });
 
 
     // tlacitko pro spusteni nove hry 
     // vygenerovani hraciho pole
-    var gameStart = document.getElementById('game-start');
+    $('#game-start').click(function() {
 
-    if (document.addEventListener) {    // W3C
-        gameStart.addEventListener('click', myHandler, false);
-
-    } else if (document.attachEvent) {  // IE
-        gameStart.attachEvent('onclick', myHandler);
-
-    } else { 
-        gameStart.onclick = myHandler;
-    }
-
-
-    function reload() {
-        location.reload();
-    }
-
-
-    function myHandler() {
         // vychozi hodnoty
-        var cardsCount = 20;
         var cardsCount, cardsAll;
 
         // ziskani velikosti hraciho pole
@@ -199,7 +165,7 @@ matchingGame.deck = [
         }
 
         // nastavení pozice karet
-        $('#game').children().each(function(index) {
+        $('#game').children().each(function() {
 
             // ziskani obrazku karty ze zamichaneho balicku
             var pattern = matchingGame.deck.pop();
@@ -214,27 +180,27 @@ matchingGame.deck = [
             // zachyceni kliknuti na kartu - jeji otoceni
             var actualCard = $(this);
             $(this).click(selectCardClosure(actualCard, cardsAll));
-
         });
-    }
 
+    });
 
+   
     // zamichani balicku karet
-    function shuffle() {
+    var shuffle = function shuffle() {
         return Math.round(Math.random() * 2) - 1;
-    }
+    };
 
 
-    function selectCardClosure(actualCard, cardsAll) {
+    var selectCardClosure = function selectCardClosure(actualCard, cardsAll) {
         return function () {
             selectCard(actualCard, cardsAll);   
         };
-    }
+    };
 
 
     // vyber karty
-    function selectCard(actualCard, cardsAll) {
-        var cardClicks = parseInt(document.getElementById('clicks').innerHTML);
+    var selectCard = function selectCard(actualCard, cardsAll) {
+        var cardClicks = parseInt($('#clicks').html());
 
         // pokud jsou otocene dve karty, neprovadi se zadna dalsi akce
         if ($('.card-flipped').size() > 1) {
@@ -245,33 +211,33 @@ matchingGame.deck = [
 
         if ($('.card-flipped').size() == 1) {
             cardClicks += 1;
-            document.getElementById('clicks').innerHTML = cardClicks;   
+            $('#clicks').html(cardClicks);
         }
 
         if ($('.card-flipped').size() == 2) {
             cardClicks += 1;
-            document.getElementById('clicks').innerHTML = cardClicks;        
+            $('#clicks').html(cardClicks);
             setTimeout(checkPatternClosure(cardsAll), 900);
         }
-    }
+    };
 
 
-    function checkPatternClosure(cardsAll) {
+    var checkPatternClosure = function checkPatternClosure(cardsAll) {
         return function () {
             checkPattern(cardsAll);   
         };
-    }
+    };
 
 
     // kontrola, zda jsou otocene karty shodne
     // inkrementace ukazatele poctu nalezenych schodnych dvojic
-    function checkPattern(cardsAll) {
-        var cardPairs = parseInt(document.getElementById('pairs').innerHTML);
-        var cardClicks = parseInt(document.getElementById('clicks').innerHTML);
+    var checkPattern = function checkPattern(cardsAll) {
+        var cardPairs = parseInt($('#pairs').html());
+        var cardClicks = parseInt($('#clicks').html());
 
         if (isMatchPattern()) {
             cardPairs += 1;
-            document.getElementById('pairs').innerHTML = cardPairs;
+            $('#pairs').html(cardPairs);
 
             $('.card-flipped').removeClass('card-flipped').addClass('card-removed');
             //$('.card-removed').bind('webkitTransitionEnd', removeTookCards);
@@ -286,29 +252,29 @@ matchingGame.deck = [
                     keyboard: false
                 });
                 
-                var cardClicks = parseInt(document.getElementById('clicks').innerHTML);
-                var cardPairs = parseInt(document.getElementById('pairs').innerHTML);
+                cardClicks = $('#clicks').html();
+                cardPairs = $('#pairs').html();
                 // uspesnost reseni pexesa v %
                 var success = Math.round((cardPairs / Math.round(cardClicks / 2)) * 100);
 
-                document.getElementById('clicksEnd').innerHTML = cardClicks;   
-                document.getElementById('pairsEnd').innerHTML = cardPairs;   
-                document.getElementById('successEnd').innerHTML = success + '%';   
+                $('#clicks').html(cardClicks);
+                $('#pairs').html(cardPairs);
+                $('#success').html(success + '%');
             }
 
 
         } else {
             $('.card-flipped').removeClass('card-flipped');
         }
-    }
+    };
 
 
     // testovani shodnosty dvou otocenych karet pomoci HTML5 atributu data-pattern
-    function isMatchPattern() {
+    var isMatchPattern = function isMatchPattern() {
         var cards = $('.card-flipped');
         var pattern = $(cards[0]).data('pattern');  // pattern prvni otocene karty
         var anotherPattern = $(cards[1]).data('pattern');   // pattern druhe otocene karty
         return (pattern == anotherPattern);
-    }
+    };
 
-})(jQuery);
+}(jQuery));

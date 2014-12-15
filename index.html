@@ -12,21 +12,14 @@
 		<title>HTML5 Pexeso</title>
 	</head>
 	<body>
-		<header>
-			<h1>HTML5 Pexeso</h1>
-		</header>
-
-		<button id="new-game" type="button" class="btn btn-primary" data-toggle="modal" data-target="#pexeso-init">
-			Nová hra
-		</button>
-
+		
 		<div id="info">
 			<p>
-				Počet otočení karet: <span id="clicks" class="badge">0</span>
+				
 			</p>
 
 			<p>
-				Počet nalezených dvojic karet: <span id="pairs" class="badge">0</span>
+				
 			</p>
 		</div>
 
@@ -38,6 +31,18 @@
 				</div>
 			</div>
 		</div>
+
+
+		<!-- Fixed footer navbar -->
+	    <nav id="navigation" class="navbar navbar-default navbar-fixed-bottom" role="navigation">
+	      	<div class="container">
+	          	<span id="html5-pexeso" class="navbar-brand">HTML5 Pexeso</span>
+
+	          	<button id="new-game" class="btn btn-primary" data-toggle="modal" data-target="#pexeso-init">
+					Nová hra
+				</button>
+	      	</div>
+	    </nav>
 
 
 		<!-- Modals -->
@@ -111,15 +116,15 @@
 							</p>
 
 							<p>
-								Počet otočených karet: <span id="clicksEnd" class="badge">0</span>
+								Počet otočených karet: <span id="clicks" class="badge">0</span>
 							</p>
 
 							<p>
-								Počet nalezených dvojic: <span id="pairsEnd" class="badge">0</span>				
+								Počet nalezených dvojic: <span id="pairs" class="badge">0</span>				
 							</p>
 					
 							<p>
-								Vaše úspěšnost: <span id="successEnd" class="badge">0%</span>				
+								Vaše úspěšnost: <span id="success" class="badge">0%</span>				
 							</p>
 						</div>
 

@@ -1,20 +1,24 @@
 body {
 	text-align: center;	
-	background: #fff;
+	background: #ffffff;
+}
+
+#html5-pexeso {
+	margin-top: 2px;
+	font-size: 15pt;
 }
 
 #new-game {
-	margin-top: 20px;
-	margin-bottom: 20px;	
+	margin-top: 10px;
+	margin-bottom: 10px;
+	float: right;
 }
  
-
-#info {
-	margin-bottom: 20px;	
-}
-
 #game {
+	float: left;
 	width: 100%;
+	z-index: 10;
+	margin-bottom: 100px;
 }
 
 .card {
@@ -101,233 +105,9 @@ body {
 
 
 
-@media (max-width: 479px) {
+@media (max-width: 459px) {
   	.card {
-		width: 100%;
-	}
-
-	.face {
-		height: 200px;
-		width: 200px;
-	}
-
-	.back {
-		margin-top: -210px;
-	}
-
-	.back > .fa {
-		line-height: 200px;
-		font-size: 100pt;
-	}
-
-	h1,
-	.modal-title {
-		font-size: 30pt;
-	}
-
-	#new-game,
-	#renew-game,
-	#game-start {
-		font-size: 20pt;	
-	}
-
-	#info,
-	.modal-content, 
-	.badge {
-		font-size: 16pt;
-	}
-}
-
-@media (min-width: 480px) {
-  	.card {
-		width: 40%;
-	}
-
-	.face {
-		height: 175px;
-		width: 175px;
-	}
-
-	.back {
-		margin-top: -185px;
-	}
-
-	.back > .fa {
-		line-height: 175px;
-		font-size: 80pt;
-	}
-
-	h1,
-	.modal-title {
-		font-size: 30pt;
-	}
-
-	#new-game,
-	#renew-game,
-	#game-start {
-		font-size: 20pt;	
-	}
-
-	#info,
-	.modal-content, 
-	.badge {
-		font-size: 16pt;
-	}
-}
-
-
-@media (min-width: 580px) {
-  	.card {
-		width: 30%;
-	}
-
-	.face {
-		height: 150px;
-		width: 150px;
-	}
-
-	.back {
-		margin-top: -160px;
-	}
-
-	.back > .fa {
-		line-height: 150px;
-		font-size: 70pt;
-	}
-
-	h1,
-	.modal-title {
-		font-size: 28pt;
-	}
-
-	#new-game,
-	#renew-game,
-	#game-start {
-		font-size: 18pt;	
-	}
-
-	#info,
-	.modal-content, 
-	.badge {
-		font-size: 14pt;
-	}
-}
-
-@media (min-width: 768px) {
-  	.card {
-		width: 20%;
-	}
-
-	.face {
-		height: 125px;
-		width: 125px;
-	}
-
-	.back {
-		margin-top: -135px;
-	}
-
-	.back > .fa {
-		line-height: 125px;
-		font-size: 60pt;
-	}
-
-	h1,
-	.modal-title {
-		font-size: 28pt;
-	}
-
-	#new-game,
-	#renew-game,
-	#game-start {
-		font-size: 16pt;	
-	}
-
-	#info,
-	.modal-content, 
-	.badge {
-		font-size: 14pt;
-	}
-}
-
-
-@media (min-width: 992px) {
-  	.card {
-		width: 20%;
-	}
-
-	.face {
-		height: 125px;
-		width: 125px;
-	}
-
-	.back {
-		margin-top: -135px;
-	}
-
-	.back > .fa {
-		line-height: 125px;
-		font-size: 50pt;
-	}
-
-	h1,
-	.modal-title {
-		font-size: 26pt;
-	}
-
-	#new-game,
-	#renew-game,
-	#game-start {
-		font-size: 16pt;	
-	}
-
-	#info,
-	.modal-content, 
-	.badge {
-		font-size: 12pt;
-	}
-}
-
-@media (min-width: 1100px) {
-  	.card {
-		width: 15%;
-	}
-
-	.face {
-		height: 125px;
-		width: 125px;
-	}
-
-	.back {
-		margin-top: -135px;
-	}
-
-	.back > .fa {
-		line-height: 125px;
-		font-size: 50pt;
-	}
-
-	h1,
-	.modal-title {
-		font-size: 24pt;
-	}
-
-	#new-game,
-	#renew-game,
-	#game-start {
-		font-size: 100%;	
-	}
-
-	#info,
-	.modal-content, 
-	.badge {
-		font-size: 100%;
-	}
-}
-
-@media (min-width: 1200px) {
-  	.card {
-		width: 10%;
+		width: 33%;
 	}
 
 	.face {
@@ -341,12 +121,234 @@ body {
 
 	.back > .fa {
 		line-height: 100px;
-		font-size: 40pt;
+		font-size: 50pt;
 	}
 
-	h1,
 	.modal-title {
-		font-size: 24pt;
+		font-size: 20pt;
+	}
+
+	#new-game,
+	#renew-game,
+	#game-start {
+		font-size: 16pt;	
+	}
+
+	#info,
+	.modal-content, 
+	.badge {
+		font-size: 14pt;
+	}
+
+	#html5-pexeso {
+		margin-top: 5px;
+		font-size: 16pt;
+	}
+
+	#game {
+		margin-bottom: 100px;
+	}
+}
+
+@media (min-width: 430px) {
+  	.card {
+		width: 25%;
+	}
+
+	.face {
+		height: 100px;
+		width: 100px;
+	}
+
+	.back {
+		margin-top: -110px;
+	}
+
+	.back > .fa {
+		line-height: 100px;
+		font-size: 50pt;
+	}
+
+	.modal-title {
+		font-size: 20pt;
+	}
+
+	#new-game,
+	#renew-game,
+	#game-start {
+		font-size: 16pt;	
+	}
+
+	#info,
+	.modal-content, 
+	.badge {
+		font-size: 14pt;
+	}
+
+	#html5-pexeso {
+		margin-top: 5px;
+		font-size: 16pt;
+	}
+
+	#game {
+		margin-bottom: 100px;
+	}
+}
+
+@media (min-width: 580px) {
+  	.card {
+		width: 20%;
+	}
+
+	.face {
+		height: 100px;
+		width: 100px;
+	}
+
+	.back {
+		margin-top: -110px;
+	}
+
+	.back > .fa {
+		line-height: 100px;
+		font-size: 50pt;
+	}
+
+	.modal-title {
+		font-size: 20pt;
+	}
+
+	#new-game,
+	#renew-game,
+	#game-start {
+		font-size: 16pt;	
+	}
+
+	#info,
+	.modal-content, 
+	.badge {
+		font-size: 14pt;
+	}
+
+	#html5-pexeso {
+		margin-top: 5px;
+		font-size: 16pt;
+	}
+}
+
+@media (min-width: 730px) {
+  	.card {
+		width: 16%;
+	}
+
+	.face {
+		height: 100px;
+		width: 100px;
+	}
+
+	.back {
+		margin-top: -110px;
+	}
+
+	.back > .fa {
+		line-height: 100px;
+		font-size: 50pt;
+	}
+
+	.modal-title {
+		font-size: 20pt;
+	}
+
+	#new-game,
+	#renew-game,
+	#game-start {
+		font-size: 15pt;	
+	}
+
+	#info,
+	.modal-content, 
+	.badge {
+		font-size: 13pt;
+	}
+
+	#html5-pexeso {
+		margin-top: 5px;
+		font-size: 16pt;
+	}
+
+	#game {
+		margin-left: 10px;
+		margin-bottom: 100px;
+	}
+}
+
+@media (min-width: 890px) {
+  	.card {
+		width: 13%;
+	}
+
+	.face {
+		height: 100px;
+		width: 100px;
+	}
+
+	.back {
+		margin-top: -110px;
+	}
+
+	.back > .fa {
+		line-height: 100px;
+		font-size: 50pt;
+	}
+
+	.modal-title {
+		font-size: 20pt;
+	}
+
+	#new-game,
+	#renew-game,
+	#game-start {
+		font-size: 14pt;	
+	}
+
+	#info,
+	.modal-content, 
+	.badge {
+		font-size: 12pt;
+	}
+
+	#html5-pexeso {
+		margin-top: 5px;
+		font-size: 16pt;
+	}
+
+	#game {
+		margin-left: 10px;
+		margin-bottom: 100px;
+	}
+}
+
+@media (min-width: 1080px) {
+  	.card {
+		width: 11%;
+	}
+
+	.face {
+		height: 100px;
+		width: 100px;
+	}
+
+	.back {
+		margin-top: -110px;
+	}
+
+	.back > .fa {
+		line-height: 100px;
+		font-size: 50pt;
+	}
+
+	.modal-title {
+		font-size: 20pt;
 	}
 
 	#new-game,
@@ -358,6 +360,62 @@ body {
 	#info,
 	.modal-content, 
 	.badge {
-		font-size: 100%;
+		font-size: 12pt;
+	}
+
+	#html5-pexeso {
+		margin-top: 5px;
+		font-size: 16pt;
+	}
+
+	#game {
+		margin-left: 10px;
+		margin-bottom: 100px;
+	}
+}
+
+@media (min-width: 1300px) {
+  	.card {
+		width: 9%;
+	}
+
+	.face {
+		height: 100px;
+		width: 100px;
+	}
+
+	.back {
+		margin-top: -110px;
+	}
+
+	.back > .fa {
+		line-height: 100px;
+		font-size: 50pt;
+	}
+
+	.modal-title {
+		font-size: 20pt;
+	}
+
+	#new-game,
+	#renew-game,
+	#game-start {
+		font-size: 100%;	
+	}
+
+	#info,
+	.modal-content, 
+	.badge {
+		font-size: 12pt;
+	}
+
+	#html5-pexeso {
+		margin-top: 5px;
+		font-size: 16pt;
+	}
+
+	#game {
+		margin-left: 10px;
+		margin-bottom: 100px;
 	}
 }
