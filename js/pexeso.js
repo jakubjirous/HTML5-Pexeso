@@ -157,7 +157,7 @@ matchingGame.deck = [
         matchingGame.deck.splice(cardsCount, Number.MAX_VALUE);
 
         // zamichani balicku s kartami
-        matchingGame.deck.sort(shuffle);
+        matchingGame.deck = shuffle(matchingGame.deck);
 
         // vytvoreni vsech karet do hraciho pole
         for (var i = 1; i < cardsCount; i++) {
@@ -173,7 +173,6 @@ matchingGame.deck = [
             // nastaveni ikony na zadni strane karty
             $(this).find('.back').find('i').addClass(pattern);
             
-
             // ulozeni informaci o ikone karty do HTML5 elementu  data-pattern 
             $(this).attr('data-pattern', pattern);
 
@@ -186,8 +185,9 @@ matchingGame.deck = [
 
    
     // zamichani balicku karet
-    var shuffle = function shuffle() {
-        return Math.round(Math.random() * 2) - 1;
+    var shuffle = function shuffle(o) {
+        for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
+        return o;
     };
 
 
@@ -240,8 +240,6 @@ matchingGame.deck = [
             $('#pairs').html(cardPairs);
 
             $('.card-flipped').removeClass('card-flipped').addClass('card-removed');
-            //$('.card-removed').bind('webkitTransitionEnd', removeTookCards);
-
 
             // zjisteni konce hry - nalezeni a otoceni vsech dvoji karet
             if(cardPairs == cardsAll) {
@@ -252,7 +250,9 @@ matchingGame.deck = [
                     keyboard: false
                 });
                 
+                // pocet kliknuti na kartu
                 cardClicks = $('#clicks').html();
+                // pocet nalezenych paru karet
                 cardPairs = $('#pairs').html();
                 // uspesnost reseni pexesa v %
                 var success = Math.round((cardPairs / Math.round(cardClicks / 2)) * 100);

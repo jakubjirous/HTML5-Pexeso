@@ -3,6 +3,11 @@ body {
 	background: #ffffff;
 }
 
+#navigation {
+	float: left;
+	clear: both;
+}
+
 #html5-pexeso {
 	margin-top: 2px;
 	font-size: 15pt;
@@ -103,8 +108,6 @@ body {
 	opacity: 0;
 }
 
-
-
 @media (max-width: 459px) {
   	.card {
 		width: 33%;
@@ -146,8 +149,10 @@ body {
 	}
 
 	#game {
-		margin-bottom: 100px;
+		margin-bottom: 200px;
 	}
+
+	
 }
 
 @media (min-width: 430px) {
@@ -191,7 +196,7 @@ body {
 	}
 
 	#game {
-		margin-bottom: 100px;
+		margin-bottom: 200px;
 	}
 }
 
